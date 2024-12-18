@@ -1,5 +1,12 @@
 <script>
   import { Filter, TicketCard } from '$lib/index'
+  import krampus from '$lib/assets/krampus.png'
+  import tree from '$lib/assets/tree.png'
+  import bell from '$lib/assets/krampusbellpin.webp'
+  import metalTrack from '$lib/assets/metal.mp3'
+  import pianoTrack from '$lib/assets/piano.mp3'
+  import bellSound from '$lib/assets/bellSound.mp3'
+  import font from '$lib/assets/font/RUSTY-ATTACK-DEMO-Regular.otf'
   import { onMount } from 'svelte'
   export let itemCollection
   export let cities
@@ -78,19 +85,19 @@
 <div class="snowflake">❅</div>
 <div class="snowflake">❆</div>
 <div class="snowflake">❄</div>
-<img id="tree" src="/src/lib/assets/tree.png" alt="kerstboom" />
-<img id="krampus" src="/src/lib/assets/krampus.png" alt="krampus" />
-<img id="bell" class="krampusbell" src="/src/lib/assets/krampusbellpin.webp" alt="krampus bell" />
-<img id="bell1" class="krampusbell" src="/src/lib/assets/krampusbellpin.webp" alt="krampus bell" />
-<img id="bell2" class="krampusbell" src="/src/lib/assets/krampusbellpin.webp" alt="krampus bell" />
-<audio id="piano" src="/src/lib/assets/piano.mp3"></audio>
-<audio id="metal" src="/src/lib/assets/metal.mp3"></audio>
-<audio id="bellSound" src="/src/lib/assets/sleigh-bell-long-01-38409.mp3"></audio>
+<img id="tree" src={tree} alt="kerstboom" />
+<img id="krampus" src={krampus} alt="krampus" />
+<img id="bell" class="krampusbell" src={bell} alt="krampus bell" />
+<img id="bell1" class="krampusbell" src={bell} alt="krampus bell" />
+<img id="bell2" class="krampusbell" src={bell} alt="krampus bell" />
+<audio id="piano" src={pianoTrack}></audio>
+<audio id="metal" src={metalTrack}></audio>
+<audio id="bellSound" src={bellSound}></audio>
 
 <style>
   @font-face {
     font-family: 'rusty-attack';
-    src: url('/src/lib/assets/font/RUSTY\ ATTACK\ DEMO\ Regular.otf');
+    src: url({font});
   }
   h1 {
     color: white;
